@@ -147,3 +147,11 @@ def main():
 
 print("Welcome to Love Sandwiches Data Automation")
 main()
+
+get_stock_values
+pass it the value returned from the main function
+make a request to retrieve the sandwich type headings
+then write code to create a dictionary containing these headings as keys
+paired with the data from the stock_values list as values
+
+python data structures contains dictionary, return the dictionary and print it
