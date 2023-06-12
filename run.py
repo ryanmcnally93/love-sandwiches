@@ -151,21 +151,11 @@ stock_data = main()
 
 
 def get_stock_values(x):
-    print(x)
-    stock = SHEET.worksheet("stock")
+    headers = SHEET.worksheet("stock").get_all_values()[0]
+    answer = {headers[i]: x[i] for i in range(len(headers))}
 
-    headers = []
-    for inde in range(1, 7):
-        col = stock.col_values(inde)
-        headers.append(col[0])
-    print(headers)
+    return answer
 
 
-get_stock_values(stock_data)
-
-# pass it the value returned from the main function
-# make a request to retrieve the sandwich type headings
-# then write code to create a dictionary containing these headings as keys
-# paired with the data from the stock_values list as values
-
-# python data structures contains dictionary, return the dictionary and print it
+stock_values = get_stock_values(stock_data)
+print(stock_values)
