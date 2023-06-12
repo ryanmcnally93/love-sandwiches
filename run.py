@@ -143,15 +143,29 @@ def main():
     sales_columns = get_last_5_entries_sales()
     stock_data = calculate_stock_data(sales_columns)
     update_worksheet(stock_data, "stock")
+    return stock_data
 
 
 print("Welcome to Love Sandwiches Data Automation")
-main()
+stock_data = main()
 
-get_stock_values
-pass it the value returned from the main function
-make a request to retrieve the sandwich type headings
-then write code to create a dictionary containing these headings as keys
-paired with the data from the stock_values list as values
 
-python data structures contains dictionary, return the dictionary and print it
+def get_stock_values(x):
+    print(x)
+    stock = SHEET.worksheet("stock")
+
+    headers = []
+    for inde in range(1, 7):
+        col = stock.col_values(inde)
+        headers.append(col[0])
+    print(headers)
+
+
+get_stock_values(stock_data)
+
+# pass it the value returned from the main function
+# make a request to retrieve the sandwich type headings
+# then write code to create a dictionary containing these headings as keys
+# paired with the data from the stock_values list as values
+
+# python data structures contains dictionary, return the dictionary and print it
